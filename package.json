@@ -1,0 +1,89 @@
+{
+  "name": "babel-plugin-transform-jsx-wxml",
+  "version": "1.0.0",
+  "description": "Turn JSX into WXML(Wechat Mini-program Markup Language).",
+  "author": {
+    "name": "Xu Yuanxiang",
+    "url": "http://xuyuanxiang.me/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xuyuanxiang/babel-plugin-transform-jsx-wxml.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xuyuanxiang/babel-plugin-transform-jsx-wxml/issues"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=6.9"
+  },
+  "main": "lib/index.js",
+  "keywords": [
+    "JSX",
+    "React",
+    "babel-plugin",
+    "wechat",
+    "mini program",
+    "微信",
+    "小程序"
+  ],
+  "dependencies": {
+    "@babel/helper-plugin-utils": "^7.0.0-beta.50",
+    "@babel/plugin-syntax-jsx": "^7.0.0-beta.50",
+    "@babel/types": "^7.0.0-beta.50"
+  },
+  "peerDependencies": {
+    "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.0.0-beta.50",
+    "@babel/core": "7.0.0-beta.50",
+    "@babel/preset-env": "7.0.0-beta.50",
+    "@types/jest": "^23.1.4",
+    "babel-core": "^7.0.0-0",
+    "babel-jest": "^23.2.0",
+    "cross-env": "^5.2.0",
+    "jest": "^23.2.0",
+    "jest-spec-reporter": "^1.0.3",
+    "prettier": "1.13.7"
+  },
+  "scripts": {
+    "test": "cross-env NODE_ENV=test BABEL_ENV=test jest -u",
+    "build": "cross-env NODE_ENV=production BABEL_ENV=production babel src --ignore index.spec.js --out-dir lib",
+    "eject": "npm publish --registry https://registry.npmjs.org/",
+    "format": "prettier --write \"**/*.{js,md,json}\""
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": 6.9
+          }
+        }
+      ]
+    ]
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "node"
+    ],
+    "testEnvironment": "jsdom",
+    "testRegex": "(src/__tests__/.*|(\\.|/)(test|spec))\\.js$",
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    },
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/**/*.spec.js",
+      "!**/__tests__/**"
+    ],
+    "reporters": [
+      "default",
+      "jest-spec-reporter"
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should tern jsx to wxml 1`] = `
+"const array = ['1', '2', '3'];
+<view>
+  <my-button wx:if=\\"{{state.flag}}\\">Click Me</my-button>
+  
+  <body1 wx:for=\\"{{['a','b','c',1,2]}}\\" wx:for-item=\\"{{it}}\\" wx:for-index=\\"{{idx}}\\">{{it}}</body1>
+  
+  <image lazy-load wx:for=\\"{{array}}\\" wx:for-item=\\"{{it}}\\" wx:for-index=\\"{{idx}}\\">{{it}}</image>      
+</view>;"
+`;
